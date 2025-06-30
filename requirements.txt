@@ -1,0 +1,8 @@
+aiohttp>=3.9.0
+beautifulsoup4>=4.12.0
+colorama>=0.4.6
+Flask>=2.3.0
+gunicorn>=20.0.0 # For serving your Flask app in production
+python-dotenv>=1.0.0 # If you use .env files for your CAPTCHA_API_KEY or other secrets
+selenium>=4.0.0 # For BrowserController if using real browsers
+webdriver-manager>=4.0.0 # Helpful for managing WebDriver binaries for Selenium

@@ -1,0 +1,14 @@
+[Service]
+User=wofl
+Group=wofl
+# PermissionsStartOnly=true # Can be commented out for this test, or left in.
+WorkingDirectory=/home/wofl/proxy_test_app
+# Environment="PATH=/home/wofl/proxy_test_app/venv/bin" # This might be redundant with bash -c
+# Environment="PYTHONPATH=/home/wofl/proxy_test_app" # This might be redundant with bash -c
+
+# Use bash -c to explicitly activate venv and run gunicorn
+ExecStart=/bin/bash -c 'source /home/wofl/proxy_test_app/venv/bin/activate && /home/wofl/proxy_test_app/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:9876 proxy-test-app:app'
+
+Restart=always
+StandardOutput=journal
+StandardError=journal
